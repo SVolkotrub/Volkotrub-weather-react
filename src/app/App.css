@@ -1,0 +1,5 @@
+.App .container {
+  margin: 30px auto;
+  font-family: sans-serif;
+  max-width: 540px;
+}

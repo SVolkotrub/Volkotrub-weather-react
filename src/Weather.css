@@ -1,0 +1,62 @@
+ h1 {
+  color: #048998;
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 0rem;
+}
+
+ button {
+  text-align: center;
+  background-color: #048998;
+  border: 1px solid #048998;
+  border-radius: 4px;
+  box-shadow: 10px 5px 5px #c4dce0;
+  color: #f6f5f5;
+  transition: all 200ms ease-in-out;
+}
+
+ button:hover {
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+ .card {
+  margin: 0 auto;
+  
+  height: fit-content;
+}
+
+ .card-header {
+  background-color: #abcecf;
+  font-family: "Cinzel", serif;
+}
+
+ .card-body {
+  background-color: #daf4f5;
+  color: #048998;
+  font-family: "Domine", serif;
+  font-weight: 500;
+}
+
+
+ .card-body .col-right,
+ .card-body .col-left {
+  margin-top: 30px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+   h1 {
+    font-size: 36px;
+  }
+
+   .card {
+    width: 100%;
+  }
+
+   .search #search-btn,
+   .search #cur-loc-btn {
+    width: 40px;
+  }
+}

@@ -1,0 +1,19 @@
+.search form {
+    display: inline;
+}
+
+.search #city-input {
+    border: 1px solid #50979f;
+    border-radius: 4px;
+    width: 60%;
+}
+
+.search #city-input:focus {
+    color: #71999d;
+    outline: none;
+}
+
+.search #search-btn,
+.search #cur-loc-btn {
+    width: 50px;
+}

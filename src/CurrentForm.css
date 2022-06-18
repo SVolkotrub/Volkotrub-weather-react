@@ -1,0 +1,28 @@
+.col-right,
+.col-left {
+  margin-top: 30px;
+  text-align: center;
+}
+.cur-city-title {
+  font-family: "Cinzel", serif;
+  font-size: 40px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.cur-date {
+  font-size: 15px;
+}
+
+.cur-temperature {
+  font-size: 60px;
+  padding-top: 20px;
+  padding-bottom: 0;
+  margin-left: 20px;
+}
+
+.cur-feels-like-title,
+.wind-title {
+  font-size: 15px;
+  padding-top: 0;
+}
