@@ -8,7 +8,7 @@
  button {
   text-align: center;
   background-color: #048998;
-  border: 1px solid #048998;
+  border: 1px solid #048998;/*#048998;*/
   border-radius: 4px;
   box-shadow: 10px 5px 5px #c4dce0;
   color: #f6f5f5;
@@ -23,7 +23,7 @@
 
  .card {
   margin: 0 auto;
-  
+  width: 60%;
   height: fit-content;
 }
 
@@ -33,7 +33,7 @@
 }
 
  .card-body {
-  background-color: #daf4f5;
+  background-color: #f3f6f6;/*#daf4f5;*/
   color: #048998;
   font-family: "Domine", serif;
   font-weight: 500;

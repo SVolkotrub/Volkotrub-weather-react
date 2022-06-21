@@ -15,8 +15,8 @@ export default function CurrentForm() {
     feelsLike: 25
   };
   return (
-    <div className="col col-left">
-      <div className="cur-city-title" id="city">
+    <div className="col-lg col-left">
+      <div className="cur-city-title">
         {weatherData.city}
       </div>
       <div className="row">
@@ -30,14 +30,14 @@ export default function CurrentForm() {
             <span className="temp-value" id="cur-temp-value">
               {weatherData.temperature}
             </span>
-            <span className="unit cur-unit" id="cur-unit">
+            <span className="unit" id="cur-unit">
               °C
             </span>
           </div>
           <div className="cur-feels-like-title">
-            Feels like
-            <span id="cur-feels-like-temp">{weatherData.feelsLike}</span>
-            <span className="unit cur-unit">°C</span>
+            Feels like  
+            <span id="cur-feels-like-temp">{ " "}{weatherData.feelsLike}</span>
+            <span  > °C </span>
           </div>
           <div className="weather-emoji" id="cur-weather-emoji">
             <div className="weatherIcon">

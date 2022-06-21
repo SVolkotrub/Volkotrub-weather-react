@@ -17,3 +17,10 @@
 .search #cur-loc-btn {
     width: 50px;
 }
+@media (max-width:540px){
+    
+        .search #search-btn,
+        .search #cur-loc-btn {
+            width: 40px;
+        }
+}

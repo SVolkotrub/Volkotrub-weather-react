@@ -10,8 +10,9 @@ export default function SearchForm() {
             type="search"
             name="q"
             id="city-input"
-            placeholder="Enter city"
+            placeholder="Enter a city..."
             autoComplete="off"
+            autoFocus="on"
           />
           <button className="submit ms-3" id="search-btn">
             <i className="fa-solid fa-magnifying-glass"></i>
