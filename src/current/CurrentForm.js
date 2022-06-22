@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CurrentForm.css";
-import "./Weather.css";
+import "../Weather.css";
+import FormattedDate from "../formatDate/FormattedDate";
 
 export default function CurrentForm(props) {
   const [weatherData, setWeatherData] = useState({ready: false});
@@ -14,7 +15,7 @@ export default function CurrentForm(props) {
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
-      date: "Tuesday 10:00 AM",
+      date: new Date(response.data.dt *1000),
       description: response.data.weather[0].description,
       imgUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
       feelsLike: Math.round(response.data.main.feels_like)
@@ -29,7 +30,7 @@ export default function CurrentForm(props) {
       </div>
       <div className="row">
         <div className="col cur-date">
-          Last upd: <span id="cur-date">{weatherData.date}</span>
+          Last upd: <span id="cur-date"> <FormattedDate date={weatherData.date} /></span>
         </div>
       </div>
       <div className="row">

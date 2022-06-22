@@ -1,9 +1,9 @@
 import React from "react";
 
 import "./Weather.css";
-import SearchForm from "./SearchForm";
+import SearchForm from "./search/SearchForm";
 import Header from "./header/Header";
-import CurrentForm from "./CurrentForm";
+import CurrentForm from "./current/CurrentForm";
 
 export default function Weather() {
   return (
@@ -13,7 +13,7 @@ export default function Weather() {
         <div className="card-body">
           <SearchForm />
           <div className="row">
-            <CurrentForm  defaultCity ="Kiev"/>
+            <CurrentForm  defaultCity ="Berlin"/>
             <div className="col-lg col-right">
               <h2>Forecast</h2>
               {/* <Forecast
