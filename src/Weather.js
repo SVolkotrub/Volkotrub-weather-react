@@ -1,29 +1,87 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from "axios";
 import "./Weather.css";
-import SearchForm from "./search/SearchForm";
+import WeatherInfo from "./current/WeatherInfo";
 import Header from "./header/Header";
-import CurrentForm from "./current/CurrentForm";
 
-export default function Weather() {
-  return (
-    <div className="Weather">
+
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ready: false});
+  const [city, setCity] = useState(props.defaultCity);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+  function search() {
+    const code = "a687e5ea475e61b3eb2a5486106b4e28";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${code}`;
+    axios.get(`${apiUrl}`).then(handleResponse).catch(function (error) {
+       alert('Unfortunately, we cannot find such a city in our database, please check the correct city name or try another city');});
+  }
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      temperature: Math.round(response.data.main.temp),
+      wind: Math.round(response.data.wind.speed),
+      city: response.data.name,
+      date: new Date(response.data.dt *1000),
+      description: response.data.weather[0].description,
+      imgUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      feelsLike: Math.round(response.data.main.feels_like)
+    })
+   
+  }
+  if (weatherData.ready) {
+    return (
+   < div className="Weather">
       <div className="card">
         <Header />
         <div className="card-body">
-          <SearchForm />
+           <div className="row text-left">
+            <div className="col-md search">
+               <form id="searchByCity" onSubmit={handleSubmit}>
+                <input
+                  type="search"
+                  name="q"
+                  id="city-input"
+                  placeholder="Enter a city..."
+                  autoComplete="off"
+                  autoFocus="on"
+                  onChange={handleCityChange}
+                />
+                <button className="submit ms-3" id="search-btn">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                </button>
+               </form>
+              <button id="cur-loc-btn" className="ms-3">
+                <i className="fa-solid fa-location-dot"></i>
+              </button>
+            </div>
+          </div>
           <div className="row">
-            <CurrentForm  defaultCity ="Berlin"/>
+            <div className="col-lg col-left">
+                <WeatherInfo weatherData={weatherData } />
+            </div>
             <div className="col-lg col-right">
               <h2>Forecast</h2>
               {/* <Forecast
             longitude={weatherData.longitude}
             latitude={weatherData.latitude}
-          /> */}
+              /> */}
             </div>
           </div>
         </div>
       </div>
     </div>
   );
+  } else {
+    search();
+    return "Loading...";
+}
+  
 }
