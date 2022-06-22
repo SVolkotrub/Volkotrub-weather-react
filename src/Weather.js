@@ -13,7 +13,7 @@ export default function Weather() {
         <div className="card-body">
           <SearchForm />
           <div className="row">
-            <CurrentForm />
+            <CurrentForm  defaultCity ="Kiev"/>
             <div className="col-lg col-right">
               <h2>Forecast</h2>
               {/* <Forecast
