@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import WeatherInfo from "./current/WeatherInfo";
+import CurrentWeather from "./current/CurrentWeather";
 import Header from "./header/Header";
 
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ready: false});
   const [city, setCity] = useState(props.defaultCity);
+  const code = "a687e5ea475e61b3eb2a5486106b4e28";
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -17,7 +18,6 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
   function search() {
-    const code = "a687e5ea475e61b3eb2a5486106b4e28";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${code}`;
     axios.get(`${apiUrl}`).then(handleResponse).catch(function (error) {
        alert('Unfortunately, we cannot find such a city in our database, please check the correct city name or try another city');});
@@ -29,9 +29,10 @@ export default function Weather(props) {
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
-      date: new Date(response.data.dt *1000),
+      date: new Date(response.data.dt * 1000),
+      weatherIcon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
-      imgUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      
       feelsLike: Math.round(response.data.main.feels_like)
     })
    
@@ -65,7 +66,7 @@ export default function Weather(props) {
           </div>
           <div className="row">
             <div className="col-lg col-left">
-                <WeatherInfo weatherData={weatherData } />
+                <CurrentWeather weatherData={weatherData } />
             </div>
             <div className="col-lg col-right">
               <h2>Forecast</h2>

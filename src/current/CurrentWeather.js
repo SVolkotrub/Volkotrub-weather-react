@@ -1,8 +1,9 @@
 import React from "react";
 import FormattedDate from "../formatDate/FormattedDate";
 import "./CurrentForm.css";
+import WeatherIcon from "./WeatherIcon";
 
-export default function WeatherInfo(props) {
+export default function CurrentWeather(props) {
     return (
         <>
             <div className="cur-city-title">
@@ -29,9 +30,10 @@ export default function WeatherInfo(props) {
             <span  > °C </span>
           </div>
           <div className="weather-emoji" id="cur-weather-emoji">
-            <div className="weatherIcon">
+              <WeatherIcon iconCode={props.weatherData.weatherIcon} />
+              {/* <div className="weatherIcon">
               <img src={props.weatherData.imgUrl} alt={props.weatherData.description} className="icon" />
-            </div>
+            </div> */}
           </div>
           <div className="row">
             <div className="col text-capitalize" id="weather-description">
