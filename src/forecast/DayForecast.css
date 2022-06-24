@@ -1,0 +1,41 @@
+.weekday {
+   
+    margin-bottom: 20px;
+}
+
+ .day {
+    font-size: 15px;
+}
+
+ .date {
+    font-size: 15px;
+}
+
+ .forecast-temp-max {
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+.forecast-temp-min {
+    opacity: 0.6;
+    font-weight: 400;
+    font-size: 20px;
+}
+ .weather-icon-forecast {
+    font-size: 30px;
+}
+
+@media (max-width: 992px) {
+     .day {
+        font-size: 12px;
+    }
+
+     .date {
+        font-size: 12px;
+    }
+
+     .temperature {
+        font-size: 17px;
+        padding-top: 5px;
+    }
+}
