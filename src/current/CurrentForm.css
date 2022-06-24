@@ -11,11 +11,11 @@
 }
 
 .cur-date {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .cur-temperature {
-  font-size: 60px;
+  font-size: 70px;
   padding-top: 20px;
   padding-bottom: 0;
   margin-left: 20px;
@@ -23,7 +23,7 @@
 
 .cur-feels-like-title,
 .wind-title {
-  font-size: 15px;
+  font-size: 18px;
   padding-top: 0;
 }
  #cur-weather-emoji {
@@ -32,14 +32,14 @@
 }
 
  #weather-description {
-  font-size: 15px;
+  font-size: 18px;
   padding-top: 0;
 }
 .unit {
   margin-bottom: 0px;
   position: relative;
   font-size: 35px;
-  top: -20px;
+  top: -27px;
 }
 .unit-link {
   text-decoration: none;

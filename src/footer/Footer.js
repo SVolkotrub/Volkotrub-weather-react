@@ -15,7 +15,7 @@ export default function Footer() {
       </a>{" "}
       and project is{" "}
       <a
-        href="https://github.com/SVolkotrub/Volkotrub-weather-react-app"
+        href="https://github.com/SVolkotrub/Volkotrub-weather-react"
         target="_blank"
         rel="noreferrer noopener"
         title="Project on GitHub"

@@ -79,10 +79,10 @@ export default function Weather(props) {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg col-left">
+            <div className="col-md col-left">
                 <CurrentWeather weatherData={weatherData } />
             </div>
-            <div className="col-lg col-right">
+            <div className="col-md col-right">
               <WeatherForecast longitude={weatherData.longitude}
               latitude={weatherData.latitude}/>
             </div>
