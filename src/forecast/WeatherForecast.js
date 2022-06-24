@@ -16,7 +16,14 @@ export default function WeatherForecast(props) {
         setLoaded(true);
 
     }
-
+    function load() {
+        const code = "a687e5ea475e61b3eb2a5486106b4e28";
+        let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&units=metric&appid=${code}`;
+    
+        axios.get(apiUrlForecast).then(handleResponse).catch(function (error) {
+            alert('Unfortunately, something is wrong with connection to database...');
+        });
+    }
     if (loaded) {
         console.log(forecast);
         return (
@@ -35,12 +42,7 @@ export default function WeatherForecast(props) {
         );
     } else {
         
-        const code = "a687e5ea475e61b3eb2a5486106b4e28";
-        let apiUrlForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${props.latitude}&lon=${props.longitude}&units=metric&appid=${code}`;
-    
-        axios.get(apiUrlForecast).then(handleResponse).catch(function (error) {
-            alert('Unfortunately, something is wrong with connection to database...');
-        });
+        load();
         return "Loading...";
     
     

@@ -36,7 +36,20 @@ export default function Weather(props) {
       longitude: response.data.coord.lon,
       latitude: response.data.coord.lat
     })
-   
+  }
+  function handleCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(getLocation);
+  }
+  function getLocation(position) {
+    searchByLocation(
+      Math.round(position.coords.latitude),
+      Math.round(position.coords.longitude)
+    );
+  }
+  function searchByLocation(lat, lon) {
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${code}`;
+    axios.get(apiUrl).then(handleResponse).catch(function (error) { alert("Unfortunately, something was going wrong...")});
   }
   if (weatherData.ready) {
     return (
@@ -60,7 +73,7 @@ export default function Weather(props) {
                   <i className="fa-solid fa-magnifying-glass"></i>
                 </button>
                </form>
-              <button id="cur-loc-btn" className="ms-3">
+              <button id="cur-loc-btn" className="ms-3" onClick={handleCurrentLocation}>
                 <i className="fa-solid fa-location-dot"></i>
               </button>
             </div>
