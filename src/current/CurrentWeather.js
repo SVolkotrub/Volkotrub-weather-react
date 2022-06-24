@@ -19,16 +19,14 @@ export default function CurrentWeather(props) {
           <div className="col" id="cur-weather">
             <CurrentTemperature celsius={props.weatherData.temperature}  />
           
-          <div className="cur-feels-like-title">
+            <div className="cur-feels-like-title">
             Feels like  
             <span id="cur-feels-like-temp">{ " "}{props.weatherData.feelsLike}</span>
             <span  > °C </span>
           </div>
           <div className="weather-emoji" id="cur-weather-emoji">
               <WeatherIcon iconCode={props.weatherData.weatherIcon} />
-              {/* <div className="weatherIcon">
-              <img src={props.weatherData.imgUrl} alt={props.weatherData.description} className="icon" />
-            </div> */}
+              
           </div>
           <div className="row">
             <div className="col text-capitalize" id="weather-description">

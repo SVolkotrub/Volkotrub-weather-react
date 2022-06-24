@@ -6,11 +6,11 @@ import WeatherIcon from "../current/WeatherIcon";
 export default function DayForecast(props) {
     function maxTemperature() {
         let temperature = Math.round(props.forecast.temp.max);
-        return `${temperature}°`;
+        return `${temperature}°C`;
     }
     function minTemperature() {
         let temperature = Math.round(props.forecast.temp.min);
-        return `${temperature}°`;
+        return `${temperature}°C`;
     }
     const date = new Date(props.forecast.dt * 1000);
        
