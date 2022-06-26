@@ -27,7 +27,7 @@ export default function CurrentWeather(props) {
             <div className="cur-feels-like-title">
             Feels like  
             <span id="cur-feels-like-temp">{ " "}{temperatureConversion(unit, props.weatherData.feelsLike)}</span>
-            <span  > °C </span>
+            <span  > ° </span>
           </div>
           <div className="weather-emoji" id="cur-weather-emoji">
               <WeatherIcon iconCode={props.weatherData.weatherIcon} />
