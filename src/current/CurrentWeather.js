@@ -12,7 +12,7 @@ export default function CurrentWeather(props) {
       </div>
       <div className="row">
         <div className="col cur-date">
-         <span id="cur-date"> <FormattedDate timezone={props.weatherData.timezone} dt={props.weatherData.dt} /></span>
+         <span id="cur-date"> <FormattedDate timezone_off={props.timezone} dt={props.weatherData.dt} /></span>
         </div>
       </div>
       <div className="row">
