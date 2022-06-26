@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import { BallTriangle } from 'react-loader-spinner';
 import CurrentWeather from "./current/CurrentWeather";
 import Header from "./header/Header";
 import WeatherForecast from "./forecast/WeatherForecast";
@@ -29,7 +30,9 @@ export default function Weather(props) {
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       city: response.data.name,
-      date: new Date(response.data.dt * 1000),
+      timezone: response.data.timezone,
+      dt: response.data.dt,
+      // date: new Date(response.data.dt * 1000),
       weatherIcon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
       feelsLike: Math.round(response.data.main.feels_like),
@@ -93,7 +96,7 @@ export default function Weather(props) {
   );
   } else {
     search();
-    return "Loading...";
+    return <BallTriangle color="#00BFFF" height={80} width={80} />;
 }
   
 }

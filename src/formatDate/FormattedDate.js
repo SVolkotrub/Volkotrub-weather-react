@@ -3,12 +3,13 @@ import FormattedDay from "./FormattedDay";
 import FormattedTime from "./FormattedTime";
 
 export default function FormattedDate(props) {
-       
+    let date = new Date(props.dt * 1000);
+    console.log({ date });
     return (<span>
-        <FormattedDay form="short" dayIndex={props.date.getDay()} />
+        <FormattedDay form="short" dayIndex={date.getDay()} />
         {", "}
-        <FormattedMonth form="short" monthIndex={props.date.getMonth()} /> {props.date.getDate()}
-        {", "} <FormattedTime hours={props.date.getHours()} minutes={props.date.getMinutes() } />
+        <FormattedMonth form="short" monthIndex={date.getMonth()} /> {date.getDate()}
+        {", "} <FormattedTime date={props.timezone} />
     </span>
     )
 }

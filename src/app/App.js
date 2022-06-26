@@ -1,5 +1,5 @@
 import React from "react";
-
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./App.css";
 import Weather from "../Weather";
 import Footer from "../footer/Footer";

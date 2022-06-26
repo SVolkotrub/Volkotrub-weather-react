@@ -6,6 +6,7 @@ import axios from "axios";
 export default function WeatherForecast(props) {
     const [loaded, setLoaded] = useState(false);
     const [forecast, setForecast] = useState(null);
+    const [timezone, setTimezone] = useState(null);
 
     useEffect(() => {
         setLoaded(false);
@@ -14,6 +15,8 @@ export default function WeatherForecast(props) {
     function handleResponse(response) {
         setForecast(response.data.daily);
         setLoaded(true);
+        setTimezone(response.data.timezone_offset);
+        
 
     }
     function load() {
@@ -32,7 +35,7 @@ export default function WeatherForecast(props) {
                 {forecast.map(function (dailyForecast, index) {
                     if (index < 6) {
                         return (<div key={index}>
-                            <DayForecast forecast={dailyForecast} />
+                            <DayForecast forecast={dailyForecast} timezone_offset={timezone} />
                         </div>);
                     } else { return null; }
                     

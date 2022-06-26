@@ -12,8 +12,13 @@ export default function DayForecast(props) {
         let temperature = Math.round(props.forecast.temp.min);
         return `${temperature}°C`;
     }
-    const date = new Date(props.forecast.dt * 1000);
-       
+    const date = new Date(props.forecast.dt + props.timezone_offset * 60*1000);
+    
+    // let offset = props.timezone_offset / 60;
+    // let hours = date.getHours();
+
+    // newDate.setHours(hours - offset);
+   
     return (
         <div className="day-forecast">
             <div className="row">
