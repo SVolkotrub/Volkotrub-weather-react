@@ -3,7 +3,7 @@ import FormattedDay from "./FormattedDay";
 import FormattedTime from "./FormattedTime";
 
 export default function FormattedDate(props) {
-    const date = new Date(props.dt*1000  + props.timezone_off*720);
+    const date = new Date(props.dt * 1000+ props.timezone_off * 1000);
     
     console.log(`V FormattedDate timezone^ ${props.timezone_off} ${date.getDate()}`);
     return (<span>

@@ -5,7 +5,8 @@ import "./WeatherForecast.css";
 import { BallTriangle } from 'react-loader-spinner';
 
 export default function WeatherForecast(props) {
-    
+   
+
     if (props.forecast !== null) {
         console.log(props.forecast);
         return (
@@ -15,7 +16,7 @@ export default function WeatherForecast(props) {
                     if (index < 6) {
                         return (<div key={index}>
                             
-                            <DayForecast forecast={dailyForecast} timezone_offset={props.timezone} />
+                         <DayForecast forecast={dailyForecast} timezone_offset={props.timezone} /> 
                         </div>);
                     } else { return null; }
                     

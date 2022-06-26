@@ -1,10 +1,15 @@
-import React from "react";
+import React, {  useContext } from "react";
 import FormattedDate from "../formatDate/FormattedDate";
 import "./CurrentForm.css";
 import WeatherIcon from "./WeatherIcon";
 import CurrentTemperature from "./CurrentTemperature";
+import { UnitsContext } from "../provider/UnitsProvider";
+import { temperatureConversion } from "../convertor/temperatureConversion";
+
 
 export default function CurrentWeather(props) {
+  const { unit } = useContext(UnitsContext);
+
     return (
         <>
             <div className="cur-city-title">
@@ -21,7 +26,7 @@ export default function CurrentWeather(props) {
           
             <div className="cur-feels-like-title">
             Feels like  
-            <span id="cur-feels-like-temp">{ " "}{props.weatherData.feelsLike}</span>
+            <span id="cur-feels-like-temp">{ " "}{temperatureConversion(unit, props.weatherData.feelsLike)}</span>
             <span  > °C </span>
           </div>
           <div className="weather-emoji" id="cur-weather-emoji">

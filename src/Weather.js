@@ -5,7 +5,7 @@ import { BallTriangle } from 'react-loader-spinner';
 import CurrentWeather from "./current/CurrentWeather";
 import Header from "./header/Header";
 import WeatherForecast from "./forecast/WeatherForecast";
-
+import UnitsProvider from "./provider/UnitsProvider";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState(null);
@@ -119,15 +119,18 @@ export default function Weather(props) {
                 <i className="fa-solid fa-location-dot"></i>
               </button>
             </div>
-          </div>
+            </div>
+            <UnitsProvider>
           <div className="row">
             <div className="col-md col-left">
-                <CurrentWeather weatherData={weatherData } timezone={timezone} />
+                <CurrentWeather weatherData={weatherData } timezone={timezone} /> 
             </div>
             <div className="col-md col-right">
-                <WeatherForecast forecast={forecast} timezone={timezone} />
-            </div>
-          </div>
+               <WeatherForecast forecast={forecast} timezone={timezone} /> 
+              </div>
+              
+              </div>
+              </UnitsProvider>
         </div>
       </div>
     </div>
