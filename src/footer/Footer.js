@@ -6,7 +6,7 @@ export default function Footer() {
     <footer>
       Coded by{" "}
       <a
-        href="https://github.com/SVolkotrub?tab=repositories"
+        href="https://portfolio-volkotrub.netlify.app"
         target="_blank"
         rel="noreferrer noopener"
         title="Svitlana Volkotrub"
